@@ -10,3 +10,4 @@ Unless you own diagnostic equipment, it's not really possible to run automated t
 * [Microsoft Learn: Monitor Configuration Functions](https://learn.microsoft.com/en-us/windows/win32/monitor/monitor-configuration-functions)
 * [Microsoft Learn: Using the Low-Level Monitor Configuration Functions](https://learn.microsoft.com/en-us/windows/win32/monitor/using-the-low-level-monitor-configuration-functions)
 * [Stack Overflow: Changing monitor input source programmatically](https://stackoverflow.com/questions/60580536/changing-monitor-input-source-programmatically)
+* [Try Jupyter Lab](https://jupyter.org/try-jupyter/lab/)
