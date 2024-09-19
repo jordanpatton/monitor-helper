@@ -17,11 +17,10 @@ from lenovo_y27q20.constants import (
 # green, and blue video gain drive channels. Uses a simple straight line function with rounding and boundaries. The
 # numbers used in the straight line function were found by manipulating the API and observing the OSD.
 def _transform_video_gain_drive_from_api_to_osd(value: int) -> int:
-    # TODO: Replace with better linear regression.
-    result = round(((97 / 38) * value) - (1164 / 38) + 2) # straight line function with rounding
+    result = round((2.5421052631578958 * value) - 28.16423751686913) # straight line function with rounding
     return 0 if result < 0 else 100 if result > 100 else result # boundaries
 
-# Reports the status of a Lenovo Y27q-20 monitor in a way that matches the OSD (on-screen display).
+# Reports the status of the monitor in a way that matches the OSD (on-screen display).
 def report_osd_status(physical_monitor_handle: Type[HANDLE]) -> None:
     print('=' * 40)
     print(PHYSICAL_MONITOR_DESCRIPTION)
@@ -42,12 +41,12 @@ def report_osd_status(physical_monitor_handle: Type[HANDLE]) -> None:
         print(f'    Blue:  {_transform_video_gain_drive_from_api_to_osd(blu_cur)}/100')
     print('=' * 40)
 
-# Sets a Lenovo Y27q-20 monitor to day mode.
+# Sets the monitor to day mode.
 def set_day_mode(physical_monitor_handle: Type[HANDLE]) -> None:
     set_vcp_feature(physical_monitor_handle, VCP_CODES['luminance'], 30)
     set_vcp_feature(physical_monitor_handle, VCP_CODES['select_color_preset'], SELECT_COLOR_PRESET_WRITE_VALUES['Warm'])
 
-# Sets a Lenovo Y27q-20 monitor to night mode.
+# Sets the monitor to night mode.
 def set_night_mode(physical_monitor_handle: Type[HANDLE]) -> None:
     set_vcp_feature(physical_monitor_handle, VCP_CODES['luminance'], 0)
     set_vcp_feature(physical_monitor_handle, VCP_CODES['select_color_preset'], SELECT_COLOR_PRESET_WRITE_VALUES['User'])
