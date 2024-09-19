@@ -45,10 +45,7 @@ def get_dict_key_for_value(dictionary: dict[str, Any], value: Any) -> str:
 
 # Returns the current value and maximum value of a VCP feature.
 # @see https://learn.microsoft.com/en-us/windows/win32/api/lowlevelmonitorconfigurationapi/nf-lowlevelmonitorconfigurationapi-getvcpfeatureandvcpfeaturereply
-def get_vcp_feature(
-    physical_monitor_handle: Type[HANDLE],
-    vcp_code: Type[BYTE]
-) -> Tuple[int, int]:
+def get_vcp_feature(physical_monitor_handle: Type[HANDLE], vcp_code: Type[BYTE]) -> Tuple[int, int]:
     current_value = DWORD()
     maximum_value = DWORD()
     if not windll.dxva2.GetVCPFeatureAndVCPFeatureReply(
@@ -63,14 +60,6 @@ def get_vcp_feature(
 
 # Sets the value of a VCP feature.
 # @see https://learn.microsoft.com/en-us/windows/win32/api/lowlevelmonitorconfigurationapi/nf-lowlevelmonitorconfigurationapi-setvcpfeature
-def set_vcp_feature(
-    physical_monitor_handle: Type[HANDLE],
-    vcp_code: Type[BYTE],
-    value: Union[int, Type[BYTE]]
-) -> None:
-    if not windll.dxva2.SetVCPFeature(
-        physical_monitor_handle,
-        vcp_code,
-        DWORD(value)
-    ):
+def set_vcp_feature(physical_monitor_handle: Type[HANDLE], vcp_code: Type[BYTE], value: Union[int, Type[BYTE]]) -> None:
+    if not windll.dxva2.SetVCPFeature(physical_monitor_handle, vcp_code, DWORD(value)):
         raise WinError()
