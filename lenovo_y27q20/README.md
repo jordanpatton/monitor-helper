@@ -139,3 +139,247 @@ This table maps numbers shown on the OSD (on-screen display) to numbers read fro
 | 93...95 | 48 |
 | 96...97 | 49 |
 | 98...100 | 50 |
+
+## Lenovo Artery Data
+[Lenovo Artery v2.0.3920.2](https://pcsupport.lenovo.com/us/en/downloads/DS543485) has the following JSON blob for this monitor in its configurations. The monitor is *supposed* to be [`Y27q-20`](https://support.lenovo.com/us/en/solutions/pd500310-lenovo-y27q-20-monitor-overview), but some software packages register it as `Y27fq`, so I've included everything `Y27`-related below. Lenovo Artery's changes **do not** persist through sleep or power cycle.
+```json
+{
+  "Monitors": [
+    {
+      "Model": "LEN Y27gq-20 % LEN Y27gq-25 % LEN Y27q-20 %  Y27gq-20 % Y27gq-25 % Y27q-20 % Y25-25",
+      "SizeX": 27,
+      "Ratio": "16:9",
+      "SyncType": "G-Sync",
+      "OEM": "Lenovo",
+      "ImgUrl": "",
+      "LowBlueLightMode": {
+        "Icon": "text",
+        "Name": "Text",
+        "Brightness": -1,
+        "Contrast": -1,
+        "Temperature": -1,
+        "RGain": -1,
+        "GGain": -1,
+        "BGain": 20,
+        "OpCode": {
+          "Code": "0xdc",
+          "Arg": "0x6"
+        }
+      },
+      "CancelLowBlueLightMode": {
+        "Icon": "text",
+        "Name": "Text",
+        "Brightness": -1,
+        "Contrast": -1,
+        "Temperature": -1,
+        "RGain": -1,
+        "GGain": -1,
+        "BGain": 20,
+        "OpCode": {
+          "Code": "0xdc",
+          "Arg": "0x0"
+        }
+      },
+      "LowBlueMethod": "Scenario",
+      "OEMFunctions": [],
+      "ColorModes": [],
+      "ScenarioModes": [],
+      "InputPins": [
+        {
+          "type": "DP",
+          "Name": "Display Port",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x0F"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x2F"
+          }
+        },
+        {
+          "type": "HDMI",
+          "Name": "HDMI1",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x11"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x21"
+          }
+        },
+        {
+          "type": "TypeC",
+          "Name": "USB C1",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x13"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x23"
+          }
+        },
+        {
+          "type": "TypeC",
+          "Name": "USB C2",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x14"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x24"
+          }
+        }
+      ]
+    },
+    {
+      "Model": "Y25f % Y25g % Y27g % Y27f",
+      "LowBlueLightMode": {
+        "Icon": "text",
+        "Name": "Text",
+        "Brightness": -1,
+        "Contrast": -1,
+        "Temperature": -1,
+        "RGain": -1,
+        "GGain": -1,
+        "BGain": 20,
+        "OpCode": {
+          "Code": "",
+          "Arg": ""
+        }
+      },
+      "CancelLowBlueLightMode": {
+        "Icon": "text",
+        "Name": "Text",
+        "Brightness": -1,
+        "Contrast": -1,
+        "Temperature": -1,
+        "RGain": -1,
+        "GGain": -1,
+        "BGain": 60,
+        "OpCode": {
+          "Code": "",
+          "Arg": ""
+        }
+      },
+      "ScenarioModes": [
+        {
+          "Icon": "text",
+          "Name": "Text",
+          "Brightness": 50,
+          "Contrast": 50,
+          "Temperature": 6500,
+          "RGain": -1,
+          "GGain": -1,
+          "BGain": -1,
+          "OpCode": {
+            "Code": "",
+            "Arg": ""
+          }
+        },
+        {
+          "Icon": "photo",
+          "Name": "Photo",
+          "Brightness": 70,
+          "Contrast": 60,
+          "Temperature": 6500,
+          "RGain": -1,
+          "GGain": -1,
+          "BGain": -1,
+          "OpCode": {
+            "Code": "",
+            "Arg": ""
+          }
+        },
+        {
+          "Icon": "game",
+          "Name": "Game",
+          "Brightness": 100,
+          "Contrast": 50,
+          "Temperature": 6500,
+          "RGain": -1,
+          "GGain": -1,
+          "BGain": -1,
+          "OpCode": {
+            "Code": "",
+            "Arg": ""
+          }
+        },
+        {
+          "Icon": "video",
+          "Name": "Movie",
+          "Brightness": 90,
+          "Contrast": 65,
+          "Temperature": 9300,
+          "RGain": -1,
+          "GGain": -1,
+          "BGain": -1,
+          "OpCode": {
+            "Code": "",
+            "Arg": ""
+          }
+        }
+      ],
+      "InputPins": [
+        {
+          "type": "DP",
+          "Name": "Display Port",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x0F"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x2F"
+          }
+        },
+        {
+          "type": "HDMI",
+          "Name": "HDMI1",
+          "OpCode1": {
+            "Code": "0x60",
+            "Arg": "0x11"
+          },
+          "OpCode2": {
+            "Code": "0x60",
+            "Arg": "0x21"
+          }
+        }
+      ]
+    },
+    {
+      "Model": "Y25f",
+      "SyncType": "Free-Sync",
+      "SizeX": 25
+    },
+    {
+      "Model": "Y25g",
+      "SyncType": "G-Sync",
+      "SizeX": 25
+    },
+    {
+      "Model": "Y27f",
+      "SyncType": "Free-Sync",
+      "SizeX": 27
+    },
+    {
+      "Model": "Y27g",
+      "SyncType": "G-Sync",
+      "SizeX": 27
+    },
+    {
+      "Model": "Y27q-20 % LEN Y27q-20",
+      "SyncType": "Free-Sync",
+      "SizeX": 27
+    },
+    {
+      "Model": "Y25-25",
+      "SyncType": "Free-Sync",
+      "SizeX": 25
+    }
+  ]
+}
+```
